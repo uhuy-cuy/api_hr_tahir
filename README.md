@@ -1,52 +1,65 @@
-## ▶️ Menjalankan Project Secara Lokal
+🚀 API HRD Tahir
 
-Ikuti langkah-langkah berikut untuk menjalankan **Frontend (Next.js)**:
+API ini dibuat menggunakan Laravel untuk mendukung sistem HR Management seperti manajemen user, karyawan, dan autentikasi menggunakan JWT.
 
-### 1️⃣ Clone Repository
+📦 Persiapan Database
+Jalankan XAMPP atau Laragon.
+Buat database baru dengan nama:
+sistem_hr
+Import file database yang ada di folder:
+db/sistem_hr.sql
+Pastikan proses import database berhasil.
+⚙️ Instalasi Project
 
-```bash
-git clone https://github.com/uhuy-cuy/hr_tahir.git
-```
+Masuk ke folder project API:
 
-### 2️⃣ Install Dependencies
+cd api_hrd_tahir
 
-```bash
-npm install
-```
+Install dependency Laravel menggunakan Composer:
 
-### 3️⃣ Jalankan Development Server
+composer install
 
-```bash
-npm run dev
-```
+atau gunakan:
 
-Setelah server berjalan, buka browser dan akses:
+composer install --ignore-platform-reqs
 
-```
-http://localhost:3000
-```
+jika ada masalah versi PHP
 
----
+🔧 Konfigurasi Environment
 
-## ⚠️ Penting
+Buat file .env di dalam folder api_hrd_tahir.
 
-Aplikasi ini membutuhkan **API Backend Laravel** agar semua fitur dapat berjalan dengan baik.
+Isi file .env seperti berikut:
 
-Pastikan **API sudah dijalankan terlebih dahulu** :
+APP_KEY=
 
-```
-https://github.com/uhuy-cuy/api_hr_tahir
-```
+APP_NAME=Laravel
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
 
-Jika API belum dijalankan, beberapa fitur seperti:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sistem_hr
+DB_USERNAME=root
+DB_PASSWORD=
+🔑 Generate Laravel Key
 
-- Login (Admin HR, Karyawan)
-- Manajemen Karyawan: Tambah data karyawan, Lihat daftar karyawan, Edit data karyawan, Hapus data karyawan
-- Data Jabatan & Departemen: Kelola jabatan, Kelola departemen
-- Absensi: Input absensi karyawan, Lihat riwayat absensi
-- Cuti: Pengajuan cuti karyawan, Persetujuan cuti oleh HR
-- Dashboard: Total karyawan, Jumlah karyawan aktif, Rekap absensi / cuti
+Jalankan perintah berikut untuk membuat APP_KEY:
 
-tidak akan berfungsi.
+php artisan key:generate
+🔐 Generate JWT Secret
 
-Silakan jalankan API terlebih dahulu sebelum menggunakan aplikasi frontend.
+API ini menggunakan JWT Authentication, jalankan perintah berikut:
+
+php artisan jwt:secret
+▶️ Menjalankan Server
+
+Jalankan server Laravel:
+
+php artisan serve
+
+Server akan berjalan di:
+
+http://127.0.0.1:8000

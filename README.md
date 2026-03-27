@@ -5,7 +5,11 @@
 API ini dibuat menggunakan **Laravel** untuk mendukung sistem HR Management seperti manajemen user, karyawan, dan autentikasi menggunakan JWT.
 
 ---
+### Clone Repository
 
+```bash
+git clone https://github.com/uhuy-cuy/api_hr_tahir.git
+```
 ## 📦 Persiapan Database
 
 1. Jalankan **XAMPP** atau **Laragon**.

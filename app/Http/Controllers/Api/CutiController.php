@@ -31,10 +31,18 @@ class CutiController extends Controller
     }
 
     // DETAIL CUTI
-    public function show($id)
+    // public function show($id)
+    // {
+    //     return response()->json(Cuti::with(['karyawan', 'approvedBy'])->findOrFail($id));
+    // }
+    public function show($id_karyawan)
     {
-        return response()->json(Cuti::with(['karyawan', 'approvedBy'])->findOrFail($id));
+        // Ambil cuti untuk karyawan tertentu
+        $cutis = Cuti::where('id_karyawan', $id_karyawan)->get();
+
+        return response()->json($cutis);
     }
+
 
     // UPDATE CUTI (misal persetujuan HR)
     public function update(Request $request, $id)

@@ -47,10 +47,10 @@ class AbsensiController extends Controller
     }
 
     // DETAIL ABSENSI
-    public function show($id)
-    {
-        return response()->json(Absensi::with('karyawan')->findOrFail($id));
-    }
+    // public function show($id)
+    // {
+    //     return response()->json(Absensi::with('karyawan')->findOrFail($id));
+    // }
 
     // UPDATE ABSENSI
     public function update(Request $request, $id)

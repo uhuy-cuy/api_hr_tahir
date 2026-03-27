@@ -93,7 +93,12 @@ class KaryawanController extends Controller
             'data' => $karyawan
         ]);
     }
+    public function count()
+    {
+        $data = Karyawan::select('id_karyawan', 'status')->get();
 
+        return response()->json($data);
+    }
     public function destroy($id)
     {
         $karyawan = Karyawan::findOrFail($id);

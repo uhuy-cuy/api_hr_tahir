@@ -39,6 +39,7 @@ Route::middleware('auth:api')->group(function () {
     // CRUD KARYAWAN
     // ----------------------------
     Route::get('karyawans', [KaryawanController::class, 'index']);
+    Route::get('karyawans/count', [KaryawanController::class, 'count']);
     Route::get('karyawans/{id}', [KaryawanController::class, 'show']);
     Route::post('karyawans', [KaryawanController::class, 'store']);
     Route::put('karyawans/{id}', [KaryawanController::class, 'update']);
@@ -76,7 +77,7 @@ Route::middleware('auth:api')->group(function () {
     // CRUD CUTI
     // ----------------------------
     Route::get('cutis', [CutiController::class, 'index']);
-    Route::get('cutis/{id}', [CutiController::class, 'show']);
+    Route::get('cutis/{id_karyawan}', [CutiController::class, 'show']);
     Route::post('cutis', [CutiController::class, 'store']);
     Route::put('cutis/{id}', [CutiController::class, 'update']);
     Route::delete('cutis/{id}', [CutiController::class, 'destroy']);
